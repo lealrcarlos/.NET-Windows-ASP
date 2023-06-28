@@ -1,12 +1,26 @@
 ﻿Public Class Service1
 
+    Dim timer As Timers.Timer
+    Private db As New OrdersModel()
+
     Protected Overrides Sub OnStart(ByVal args() As String)
-        ' Add code here to start your service. This method should set things
-        ' in motion so your service can do its work.
+        timer = New Timers.Timer
+        timer.Interval = 30000
+        AddHandler timer.Elapsed, AddressOf GetOrdersHandler
+        timer.Enabled = True
     End Sub
 
     Protected Overrides Sub OnStop()
-        ' Add code here to perform any tear-down necessary to stop your service.
+        timer.Enabled = False
+    End Sub
+
+    Private Sub GetOrdersHandler(obj As Object, e As EventArgs)
+
+        Dim ordersList = db.Orders.ToList()
+        If ordersList.Count() > 0 Then
+            OrdersFile.WriteToFile(ordersList)
+        End If
+
     End Sub
 
 End Class
