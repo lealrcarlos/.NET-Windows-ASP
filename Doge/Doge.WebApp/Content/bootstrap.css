@@ -5031,6 +5031,49 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
+/* Styles for Orders view */
+.card {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: inherit;
+    background-color: ghostwhite;
+    border-radius: 15px;
+}
+
+    .card h5,
+    .card .h5 {
+        color: royalblue;
+        font-size: 18px;
+        font-weight: bold;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .card h6 {
+        font-size: 14px;
+        font-weight: bold;
+        padding-left: 40px;
+        padding-right: 30px;
+    }
+
+.delayed {
+    color: red;
+}
+
+.ontime {
+    color: green;
+}
+
+.card p {
+    font-size: small !important;
+    padding: 0 30px 0 30px !important;
+    margin: 0 !important;
+}
+
+/**/
+
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
